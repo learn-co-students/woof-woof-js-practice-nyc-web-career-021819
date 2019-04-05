@@ -13,12 +13,35 @@ fetch("http://localhost:3000/pups")
 })
 .then(function (data) {
    puppyArray = data
+   puppyArray.forEach(function(pup) {
+    const span = document.createElement("span")
+     span.innerText = `${pup.name}`
+     span.dataset.action = "show-info"
+     dogBar.appendChild(span)
+   })
+
+    dogFilter.addEventListener('click', ev => {
+      puppyArray = data
+      dogBar.innerHTML = ''
+
+      if (dogFilter.innerHTML === "Filter good dogs: OFF"){
+         dogFilter.innerHTML = "Filter good dogs: ON"
+        puppyArray = puppyArray.filter(function(puppy){
+          return puppy.isGoodDog === true
+        })
+      }
+      else if (dogFilter.innerHTML === "Filter good dogs: ON"){
+         dogFilter.innerHTML = "Filter good dogs: OFF"
+      }
+
+
 
       puppyArray.forEach(function(pup) {
        const span = document.createElement("span")
         span.innerText = `${pup.name}`
         span.dataset.action = "show-info"
         dogBar.appendChild(span)
+      })
     })
   })
 
