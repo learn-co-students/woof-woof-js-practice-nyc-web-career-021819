@@ -11,7 +11,7 @@
   width: 35vw;
   font-size: 1em;
   height: 5vh;
-  border-radius: 3em;
+  border-radius: 1em;
 }
 
 #dog-bar {
@@ -22,14 +22,14 @@
   align-items: center;
 }
 
-#dog-bar span {
-  height: 80%;
-  width: 8vw;
+#dog-bar button {
+  height: 40%;
+  width: 9vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 2em;
-  border: 1px solid blue;
+  border-radius: 1em;
+  border: 1px solid white;
 }
 
 #dog-summary-container {
